@@ -29,4 +29,12 @@ public class Developer {
     public void setLanguage(Set<String> language) {
         this.language = language;
     }
+
+    @Override
+    public String toString() {
+        return "Developer{" +
+                "name='" + name + '\'' +
+                ", language=" + language +
+                '}';
+    }
 }

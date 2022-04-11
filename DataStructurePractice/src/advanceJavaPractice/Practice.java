@@ -5,9 +5,10 @@ import advanceJavaPractice.genericsPractice.Holder;
 import advanceJavaPractice.genericsPractice.WildCardPractice;
 import advanceJavaPractice.streamPractice.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Practice {
     public static void main(String[] args) {
@@ -44,14 +45,14 @@ public class Practice {
         System.out.println(book);*/
 
         //BookProcess.process();
-        PersonProcess pp = new PersonProcess();
+      /*  PersonProcess pp = new PersonProcess();
         List<Person> lists = List.of(
                 new Person(65,"Jahanara Imam","jahanaraimam@gmail.com"),
                 new Person(36,"Jahir Raihan","jahirraihan@gmail.com")
 
                 );
 
-        pp.process();
+        pp.process();*/
         //MethodRefDemo m = new MethodRefDemo();
       /*  String hello = "Hello$world";
         StringUtils stringUtils = new StringUtils();
@@ -65,5 +66,33 @@ public class Practice {
         MethodRefDemo.check(hello2,stringUtils::isEmpty);
         MethodRefDemo.check(hello2,stringUtils::isNotEmpty);*/
 
+       /* List<Developer2> team = new ArrayList<>();
+        Developer2 dev2 = new Developer2(26,"Raihan");
+        dev2.add("Java");
+        dev2.add("Groovy");
+        dev2.add("Javascript");
+
+        Developer2 dev3 = new Developer2(27,"Rahim");
+        dev3.add("PHP");
+        dev3.add("word press");
+
+        team.add(dev2);
+        team.add(dev3);
+
+       *//* Stream<List<String>> devstream = team.stream().map(developer2 -> developer2.getLanguages());
+        devstream.collect(Collectors.toList()).forEach(dev-> System.out.println(dev));
+       *//*
+        List<String> setStream = team.stream().map(developer2 -> developer2.getLanguages()).flatMap(language -> language.stream()).collect(Collectors.toList());
+        setStream.forEach(l-> System.out.println(l));*/
+
+        List<Person> personList = List.of(new Person(15,"Sayeem",Gender.MALE),
+                new Person(12,"Tamanna",Gender.FEMALE),
+                new Person(23,"Eram",Gender.MALE),
+                new Person(20,"Rifat",Gender.MALE),
+                new Person(8,"Saif",Gender.MALE),
+                new Person(8,"Omio",Gender.FEMALE));
+
+        List<Person> personStream = personList.stream().sorted(Comparator.comparing(Person::getAge)).collect(Collectors.toList());
+        personStream.forEach(person -> System.out.println(person));
     }
 }

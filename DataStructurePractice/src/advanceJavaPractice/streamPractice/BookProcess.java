@@ -86,5 +86,9 @@ public class BookProcess {
         List<String> s = stream.distinct().collect(Collectors.toList());
         s.forEach(i-> System.out.println(i));
 
+        Stream<Developer> dev = team.stream().map(developer -> developer);
+        List<Developer> ldev = dev.collect(Collectors.toList());
+        ldev.forEach(i-> System.out.println(i.toString()));
+
     }
 }
