@@ -85,7 +85,7 @@ public class Practice {
         List<String> setStream = team.stream().map(developer2 -> developer2.getLanguages()).flatMap(language -> language.stream()).collect(Collectors.toList());
         setStream.forEach(l-> System.out.println(l));*/
 
-        List<Person> personList = List.of(new Person(15,"Sayeem",Gender.MALE),
+       /* List<Person> personList = List.of(new Person(15,"Sayeem",Gender.MALE),
                 new Person(12,"Tamanna",Gender.FEMALE),
                 new Person(23,"Eram",Gender.MALE),
                 new Person(20,"Rifat",Gender.MALE),
@@ -93,6 +93,10 @@ public class Practice {
                 new Person(8,"Omio",Gender.FEMALE));
 
         List<Person> personStream = personList.stream().sorted(Comparator.comparing(Person::getAge)).collect(Collectors.toList());
-        personStream.forEach(person -> System.out.println(person));
+        personStream.forEach(person -> System.out.println(person));*/
+
+        String x = "abc";
+        String y = "abc";
+        System.out.println(x);
     }
 }
